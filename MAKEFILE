@@ -1,0 +1,31 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    MAKEFILE                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/02 18:23:39 by apedrosa          #+#    #+#              #
+#    Updated: 2023/06/02 18:24:03 by apedrosa         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = pushswap.a
+SRC = main\
+
+CC = cc
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra
+
+all:$(NAME)
+
+$(NAME): $(SRC:=.o)
+		ar rc $(NAME) $(SRC:=.o)
+clean:
+	$(RM) $(SRC:=.o)
+fclean: clean
+		$(RM) $(NAME)
+re: fclean $(NAME)
+
+parrot: 
+	curl parrot.live
