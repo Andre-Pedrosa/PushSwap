@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	fillStack(t_stack **stack, int argc, char **argv)
+void	fillstack(t_stack **stack, int argc, char **argv)
 {
 	int	i;
 
@@ -23,14 +23,18 @@ void	fillStack(t_stack **stack, int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack 	*a;
-	//t_stack 	*b;
+	t_stack	*a;
 
 	a = NULL;
-	//b = NULL;
 	if (argc < 3)
 		return (0);
 	if (error_check(argc, argv) == 1)
+	{
 		write(1, "error\n", 6);
-	fillStack(&a, argc, argv);
+		return (0);
+	}
+	fillstack(&a, argc, argv);
+	listar(a, 'a');
+	swap(&a, 'a');
+	listar(a, 'a');
 }

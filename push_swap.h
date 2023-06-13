@@ -29,8 +29,13 @@ int			error_check(int argc, char **argv);
 void		fillStack(t_stack **s, int argc, char **argv);
 
 //Lst
-t_stack	*ft_lstnew(int number);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_back(t_stack **lst, t_stack *node);
+t_stack		*ft_lstnew(int number);
+t_stack		*ft_lstlast(t_stack *lst);
+void		ft_lstadd_back(t_stack **lst, t_stack *node);
 
+//moves
+void		swap(t_stack **s, char ab);
+
+//extra
+void		listar(t_stack *s, char ab);
 #endif
